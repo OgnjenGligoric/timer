@@ -2,13 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import {Component} from "react";
-import {Link} from 'react-router-dom'
-
-class Home extends Component {
-    render() {
-        return null;
-    }
-}
+import TimerComponent from "./components/timer/TimerComponent";
 
 function App() {
   return (
@@ -16,7 +10,7 @@ function App() {
         <div className="App">
           <Switch>
             <Route exact path = "/">
-              <Home />
+                <TimerComponent title="Title from Props" endTime={10} elapsedTime={0} />
             </Route>
           </Switch>
         </div>

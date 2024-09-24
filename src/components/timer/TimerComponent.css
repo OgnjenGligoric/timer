@@ -1,0 +1,38 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #26273d;
+    color: #ffffff;
+}
+
+.timer-container {
+    background-color: #26273d;
+    border-radius: 25px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    color: #a2a4cb;
+}
+
+.timer-container h3 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.buttons button {
+    background-color: transparent;
+    border: 1px solid #606170;
+    color: #ffffff;
+    border-radius: 15px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.buttons button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.buttons button:hover {
+    background-color: #606170;
+}
