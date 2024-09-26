@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Timer.css';
 import {buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
+import useTimer from "../hooks/useTimer";
 
 type TimerProps = {
     title: string,
@@ -10,31 +11,12 @@ type TimerProps = {
 }
 
 const Timer = ({ title, endTime, elapsedTime = 0 } : TimerProps) => {
-    const [timeLeft, setTimeLeft] = useState(endTime - elapsedTime);
-    const [isRunning, setIsRunning] = useState(false);
-    const [isCompleted, setIsCompleted] = useState(false);
-
-    useEffect(() => {
-        let timer : NodeJS.Timeout | undefined;
-        if (isRunning && timeLeft > 0) {
-            timer = setInterval(() => {
-                setTimeLeft((prev) => prev - 1);
-            }, 1000);
-        } else if (timeLeft <= 0 && isRunning) {
-            setIsCompleted(true);
-            setIsRunning(false);
-        }
-        return () => clearInterval(timer);
-    }, [isRunning, timeLeft]);
-
-    // Start, pause, and reset functions
-    const startTimer = () => setIsRunning(true);
-    const pauseTimer = () => setIsRunning(false);
-    const resetTimer = () => {
-        setTimeLeft(endTime);
-        setIsRunning(false);
-        setIsCompleted(false);
-    };
+    const { timeLeft,
+            isRunning,
+            isCompleted,
+            startTimer,
+            pauseTimer,
+            resetTimer } = useTimer({ endTime, elapsedTime });
 
     const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
     const seconds = String(timeLeft % 60).padStart(2, '0');
@@ -45,6 +27,7 @@ const Timer = ({ title, endTime, elapsedTime = 0 } : TimerProps) => {
         <div className="timer-container">
             <CircularProgressbarWithChildren
                 value={percentage}
+                strokeWidth={5}
                 styles={buildStyles({
                     pathColor: isCompleted ? '#cb6767' : '#67cb88',
                     textColor: '#ffffff',
