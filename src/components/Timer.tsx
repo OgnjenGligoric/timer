@@ -18,9 +18,11 @@ const Timer = ({ title, endTime, elapsedTime = 0 } : TimerProps) => {
             pauseTimer,
             resetTimer } = useTimer({ endTime, elapsedTime });
 
-    const minutes = String(Math.floor(timeLeft / 60)).padStart(2, '0');
-    const seconds = String(timeLeft % 60).padStart(2, '0');
+    const minutesElapsed = String(Math.floor((endTime-timeLeft) / 60)).padStart(2, '0');
+    const secondsElapsed = String((endTime-timeLeft) % 60).padStart(2, '0');
 
+    const minutesLeft = String(Math.floor(timeLeft / 60)).padStart(2, '0');
+    const secondsLeft = String(timeLeft % 60).padStart(2, '0');
     const percentage = 100 - (timeLeft / endTime) * 100;
 
     return (
@@ -36,8 +38,8 @@ const Timer = ({ title, endTime, elapsedTime = 0 } : TimerProps) => {
             >
                 <div>
                     <p>{title}</p>
-                    <h1>{minutes}:{seconds}</h1>
-                    <p>{timeLeft} seconds left</p>
+                    <h1>{minutesElapsed}:{secondsElapsed}</h1>
+                    <p>{minutesLeft}:{secondsLeft}  left</p>
                 </div>
             </CircularProgressbarWithChildren >
 
