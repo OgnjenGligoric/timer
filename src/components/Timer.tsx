@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import './TimerComponent.css';
+import './Timer.css';
 import {buildStyles, CircularProgressbarWithChildren} from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const TimerComponent = ({ title, endTime, elapsedTime = 0 }) => {
+type TimerProps = {
+    title: string,
+    endTime: number,
+    elapsedTime?: number
+}
+
+const Timer = ({ title, endTime, elapsedTime = 0 } : TimerProps) => {
     const [timeLeft, setTimeLeft] = useState(endTime - elapsedTime);
     const [isRunning, setIsRunning] = useState(false);
     const [isCompleted, setIsCompleted] = useState(false);
 
     useEffect(() => {
-        let timer;
+        let timer : NodeJS.Timeout | undefined;
         if (isRunning && timeLeft > 0) {
             timer = setInterval(() => {
                 setTimeLeft((prev) => prev - 1);
@@ -37,7 +43,6 @@ const TimerComponent = ({ title, endTime, elapsedTime = 0 }) => {
 
     return (
         <div className="timer-container">
-            <h3>{title}</h3>
             <CircularProgressbarWithChildren
                 value={percentage}
                 styles={buildStyles({
@@ -48,7 +53,7 @@ const TimerComponent = ({ title, endTime, elapsedTime = 0 }) => {
             >
                 <div>
                     <p>{title}</p>
-                    <p>{minutes}:{seconds}</p>
+                    <h1>{minutes}:{seconds}</h1>
                     <p>{timeLeft} seconds left</p>
                 </div>
             </CircularProgressbarWithChildren >
@@ -62,4 +67,4 @@ const TimerComponent = ({ title, endTime, elapsedTime = 0 }) => {
     );
 };
 
-export default TimerComponent;
+export default Timer;
