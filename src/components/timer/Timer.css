@@ -1,0 +1,12 @@
+.timer-container {
+    background-color: #26273d;
+    border-radius: 25px;
+    width: 300px;
+    height: 400px;
+    padding: 50px;
+    color: #a2a4cb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+

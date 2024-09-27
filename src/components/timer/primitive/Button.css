@@ -1,0 +1,17 @@
+button {
+    background-color: transparent;
+    border: 1px solid #606170;
+    color: #ffffff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+}
+
+button:hover {
+    background-color: #606170;
+}
