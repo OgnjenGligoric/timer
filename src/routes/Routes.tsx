@@ -5,5 +5,9 @@ export const router = createBrowserRouter([
     {
         path: "/",
         element: <TimerPage/>
+    },
+    {
+        path: "/timer",
+        element: <TimerPage/>
     }
 ])

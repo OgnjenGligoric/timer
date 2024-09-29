@@ -1,5 +1,5 @@
 {
-  "homepage": "http://ognjengligoric.github.io/timer",
+  "homepage": "http://OgnjenGligoric.github.io/timer",
   "name": "timer",
   "version": "0.1.0",
   "private": true,
@@ -7,6 +7,8 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/slim": "^3.5.0",
     "react": "^18.3.1",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.3.1",
@@ -14,6 +16,8 @@
     "react-router": "^6.26.2",
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.12.2",
+    "tsparticles": "^3.5.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -56,6 +60,8 @@
     "@storybook/react": "^8.3.2",
     "@storybook/react-webpack5": "^8.3.2",
     "@storybook/test": "^8.3.2",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
     "eslint-plugin-storybook": "^0.8.0",
     "gh-pages": "^6.1.1",

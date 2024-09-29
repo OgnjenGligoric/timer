@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import TimerComponent from "../components/timer/Timer";
+import React, { useState } from 'react';
 import './Timerpage.css';
 import TimerForm from "../components/timer/primitive/TimerForm";
-import ErrorBoundary from "../utils/ErrorBoundary";
+import Timer from "../components/timer/Timer";
+import ParticleBackground from "../components/timer/primitive/ParticlesBackground";
 
 export default function TimerPage() {
     const [timerProps, setTimerProps] = useState({ title: '', endTime: 0, elapsedTime: 0 });
@@ -12,9 +12,10 @@ export default function TimerPage() {
     };
 
     return (
-        <ErrorBoundary >
+        <div id="timer-page">
+            <ParticleBackground></ParticleBackground>
             <TimerForm onSubmit={handleFormSubmit} />
-            <TimerComponent endTime={3} title={"Something"} elapsedTime={315} />
-        </ErrorBoundary>
+            <Timer {...timerProps} />
+        </div>
     );
 }

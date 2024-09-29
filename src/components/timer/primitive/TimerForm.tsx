@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './TimerForm.css';
+import Button from "./Button";
 
 type TimerFormProps = {
     onSubmit: (title: string, endTime: number, elapsedTime: number) => void;
@@ -20,32 +21,17 @@ const TimerForm = ({ onSubmit }: TimerFormProps) => {
             <h2>Set Timer</h2>
             <label>
                 Title:
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    required
-                />
+                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required/>
             </label>
             <label>
                 End Time (seconds):
-                <input
-                    type="number"
-                    value={endTime}
-                    onChange={(e) => setEndTime(Number(e.target.value))}
-                    required
-                />
+                <input type="number" value={endTime} onChange={(e) => setEndTime(Number(e.target.value))} required/>
             </label>
             <label>
                 Elapsed Time (seconds):
-                <input
-                    type="number"
-                    value={elapsedTime}
-                    onChange={(e) => setElapsedTime(Number(e.target.value))}
-                    required
-                />
+                <input type="number" value={elapsedTime} onChange={(e) => setElapsedTime(Number(e.target.value))} required/>
             </label>
-            <button type="submit">Start Timer</button>
+            <Button type="submit">Start Timer</Button>
         </form>
     );
 };

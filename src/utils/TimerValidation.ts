@@ -17,7 +17,7 @@ export class TimerValidator {
         if (endTime > MAX_TIME) {
             throw new Error(`Invalid endTime: Timer cannot exceed 59 minutes and 59 seconds.`);
         }
-        if (endTime < MIN_TIME){
+        if (endTime <= MIN_TIME){
             throw new Error('Invalid endTime: Timer cannot be below 0 minutes and 0 seconds.');
         }
     }
