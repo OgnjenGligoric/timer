@@ -1,4 +1,5 @@
 {
+  "homepage": "http://ognjengligoric.github.io/timer",
   "name": "timer",
   "version": "0.1.0",
   "private": true,
@@ -16,6 +17,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -55,6 +58,7 @@
     "@storybook/test": "^8.3.2",
     "@types/react-router-dom": "^5.3.3",
     "eslint-plugin-storybook": "^0.8.0",
+    "gh-pages": "^6.1.1",
     "prop-types": "^15.8.1",
     "storybook": "^8.3.2",
     "webpack": "^5.94.0"
