@@ -1,5 +1,5 @@
 import { buildStyles, CircularProgressbarWithChildren } from "react-circular-progressbar";
-import React, {useState} from "react";
+import React from "react";
 import './Progressbar.css'
 import ColorShiftAnimation from "./primitive/ColorShiftAnimation";
 
@@ -10,7 +10,7 @@ const Progressbar: React.FC<TimerProgressbarProps> = ({ title, endTime, timeLeft
     return (
         <CircularProgressbarWithChildren
             value={percentage}
-            strokeWidth={5}
+            strokeWidth={4}
             styles={buildStyles({
                 pathColor: isCompleted ? 'url(#color-shift)' : '#67cb88',  // Use animated gradient when timeLeft is 0
                 textColor: '#ffffff',

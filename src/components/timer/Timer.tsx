@@ -4,6 +4,7 @@ import 'react-circular-progressbar/dist/styles.css';
 import useTimer from "../../hooks/useTimer";
 import Progressbar from "./Progressbar";
 import Button from "./primitive/Button";
+import {TimerValidator} from "../../utils/TimerValidation";
 
 type TimerProps = {
     title: string,
@@ -12,6 +13,8 @@ type TimerProps = {
 }
 
 const Timer = ({ title, endTime, elapsedTime = 0 } : TimerProps) => {
+    TimerValidator.validateTimes(endTime, elapsedTime);
+
     const { timeLeft,
             isRunning,
             startTimer,
