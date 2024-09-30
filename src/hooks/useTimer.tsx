@@ -6,9 +6,13 @@ type UseTimerProps = {
 };
 
 const useTimer = ({ endTime, elapsedTime = 0 }: UseTimerProps) => {
-    const initialTimeLeft = endTime - elapsedTime;
-    const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
+    const [timeLeft, setTimeLeft] = useState(endTime - elapsedTime);
     const [isRunning, setIsRunning] = useState(false);
+
+    useEffect(() => {
+        setTimeLeft(endTime - elapsedTime);
+
+    }, [endTime, elapsedTime]);
 
     useEffect(() => {
         let timer: NodeJS.Timeout | undefined;
@@ -25,7 +29,7 @@ const useTimer = ({ endTime, elapsedTime = 0 }: UseTimerProps) => {
     const startTimer = () => setIsRunning(true);
     const pauseTimer = () => setIsRunning(false);
     const resetTimer = () => {
-        setTimeLeft(initialTimeLeft);
+        setTimeLeft(endTime);  // Reset time based on updated props
         setIsRunning(false);
     };
 

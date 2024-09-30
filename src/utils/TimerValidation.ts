@@ -10,6 +10,8 @@ export class TimerValidator {
     private static validateElapsedTime(elapsedTime: number | undefined, endTime: number) {
         if (elapsedTime && endTime < elapsedTime) {
             throw new Error('Invalid elapsedTime: Elapsed time cannot be greater than end time.');
+        }if (elapsedTime && 0 > elapsedTime) {
+            throw new Error('Invalid elapsedTime: Elapsed time cannot be less than 0.');
         }
     }
 

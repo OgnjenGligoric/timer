@@ -16,7 +16,6 @@ type TimerProps = {
 const Timer = ({ title, endTime, elapsedTime = 0 }: TimerProps) => {
     const validationError = useTimerValidation(endTime, elapsedTime);
     const { timeLeft, isRunning, startTimer, pauseTimer, resetTimer } = useTimer({ endTime, elapsedTime });
-
     return (
         <div className="timer-container">
             {validationError && <div className="error-message">{validationError}<ErrorAnimation /></div>}
