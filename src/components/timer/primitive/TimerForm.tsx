@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './TimerForm.css';
 import Button from "./Button";
+import Icon from '../../../assets/Clock.png';
 
 type TimerFormProps = {
     onSubmit: (title: string, endTime: number, elapsedTime: number) => void;
@@ -18,7 +19,9 @@ const TimerForm = ({ onSubmit }: TimerFormProps) => {
 
     return (
         <form className="timer-form" onSubmit={handleSubmit}>
-            <h2>Set Timer</h2>
+            <div className={"clock-icon-container"}>
+                <img src={Icon} alt={"Clock icon"}/>
+            </div>
             <label>
                 Title:
                 <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required/>
@@ -31,7 +34,7 @@ const TimerForm = ({ onSubmit }: TimerFormProps) => {
                 Elapsed Time (seconds):
                 <input type="number" value={elapsedTime} onChange={(e) => setElapsedTime(Number(e.target.value))} required/>
             </label>
-            <Button type="submit">Start Timer</Button>
+            <Button type="submit">Set Timer</Button>
         </form>
     );
 };
