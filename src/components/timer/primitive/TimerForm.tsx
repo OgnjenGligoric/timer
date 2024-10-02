@@ -1,41 +1,41 @@
 import { useState } from 'react';
 import './TimerForm.css';
-import Button from "./Button";
+import Button from "../../shared/Button";
 import Icon from '../../../assets/Clock.png';
+import {Input, Slider, TextField} from '@mui/material';
 
 type TimerFormProps = {
-    onSubmit: (title: string, endTime: number, elapsedTime: number) => void;
+    onChange: (title: string, endTime: number, elapsedTime: number) => void;
 };
 
-const TimerForm = ({ onSubmit }: TimerFormProps) => {
+const TimerForm = ({ onChange }: TimerFormProps) => {
     const [title, setTitle] = useState('');
     const [endTime, setEndTime] = useState(0);
     const [elapsedTime, setElapsedTime] = useState(0);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        onSubmit(title, endTime, elapsedTime);
+    const handleSubmit = () => {
+        onChange(title, endTime, elapsedTime);
     };
 
     return (
-        <form className="timer-form" onSubmit={handleSubmit}>
+        <div className={"form-container"}>
             <div className={"clock-icon-container"}>
-                <img src={Icon} alt={"Clock icon"}/>
+                <img src={Icon} alt={"Clock icon"} />
             </div>
-            <label>
-                Title:
-                <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required/>
-            </label>
-            <label>
-                End Time (seconds):
-                <input type="number" value={endTime} onChange={(e) => setEndTime(Number(e.target.value))} required/>
-            </label>
-            <label>
-                Elapsed Time (seconds):
-                <input type="number" value={elapsedTime} onChange={(e) => setElapsedTime(Number(e.target.value))} required/>
-            </label>
-            <Button type="submit">Set Timer</Button>
-        </form>
+            <TextField id="standard-basic" fullWidth={true} label="Title" variant="standard" value={title} onChange={(e) => {setTitle(e.target.value);}}  />
+            <p>End Time (seconds):</p>
+            <Slider aria-label={"End time (seconds)"} size="small" defaultValue={endTime} value={endTime} min={0} max={3600}
+                valueLabelDisplay="auto"
+                onChange={(e, value) => {setEndTime(value as number);}}
+            />
+            <p>Elapsed Time (seconds):</p>
+            <Slider size="small" defaultValue={elapsedTime} value={elapsedTime} min={0} max={3600} // Assuming elapsedTime cannot exceed endTime
+                valueLabelDisplay="auto"
+                onChange={(e, value) => {setElapsedTime(value as number);}}
+            />
+            <Button onClick={handleSubmit}>Set</Button>
+
+        </div>
     );
 };
 

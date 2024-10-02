@@ -3,7 +3,7 @@ import './Timer.css';
 import 'react-circular-progressbar/dist/styles.css';
 import useTimer from "../../hooks/useTimer";
 import Progressbar from "./Progressbar";
-import Button from "./primitive/Button";
+import Button from "../shared/Button";
 import useTimerValidation from "../../hooks/useTimerValidation";
 import ErrorAnimation from "./primitive/ErrorAnimation";
 
@@ -15,20 +15,24 @@ type TimerProps = {
 
 const Timer = ({ title, endTime, elapsedTime = 0 }: TimerProps) => {
     const validationError = useTimerValidation(endTime, elapsedTime);
+
     const { timeLeft, isRunning, startTimer, pauseTimer, resetTimer } = useTimer({ endTime, elapsedTime });
+
+    if (validationError){
+        return (
+            <div className="timer-container">
+                <div className="error-message">{validationError}<ErrorAnimation/></div>
+            </div>
+        );
+    }
     return (
         <div className="timer-container">
-            {validationError && <div className="error-message">{validationError}<ErrorAnimation /></div>}
-            {!validationError && (
-                <>
-                    <Progressbar title={title} endTime={endTime} timeLeft={timeLeft}/>
-                    <div className="buttons">
-                        <Button onClick={startTimer} disabled={isRunning}>Start</Button>
-                        <Button onClick={pauseTimer} disabled={!isRunning}>Pause</Button>
-                        <Button onClick={resetTimer}>Reset</Button>
-                    </div>
-                </>
-            )}
+            <Progressbar title={title} endTime={endTime} timeLeft={timeLeft}/>
+            <div className="buttons">
+                <Button onClick={startTimer} disabled={isRunning}>Start</Button>
+                <Button onClick={pauseTimer} disabled={!isRunning}>Pause</Button>
+                <Button onClick={resetTimer}>Reset</Button>
+            </div>
         </div>
     );
 };

@@ -7,11 +7,24 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
     background-color: #26273d;
     color: #fff;
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+}
+
+.form-container {
+    background-color: #26273d;
+    border-radius: 25px;
     width: 300px;
     height: 400px;
     padding: 50px;
+    color: #a2a4cb;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    margin: 20px;
 }
-
 .timer-form h2 {
     margin-bottom: 20px;
     color: #fff;
@@ -25,12 +38,10 @@
 
 .timer-form input {
     width: 100%;
-    margin: 10px 0;
-    border: 1px solid #666;
+    margin-bottom: 10px;
     font-size: 16px;
     background-color: #26273d;
     color: #fff;
-    border-radius: 25px;
 }
 
 .clock-icon-container {
@@ -42,3 +53,10 @@
     height: 100%;
     object-fit: contain;
 }
+
+.input {
+    width: 100%;
+    color: white;
+}
+
+

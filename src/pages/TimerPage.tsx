@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Timerpage.css';
 import TimerForm from "../components/timer/primitive/TimerForm";
 import Timer from "../components/timer/Timer";
-import ParticleBackground from "../components/timer/primitive/ParticlesBackground";
+import ParticleBackground from "../components/shared/ParticlesBackground";
 
 export default function TimerPage() {
     const [timerProps, setTimerProps] = useState({ title: 'Title from Props', endTime: 25*60, elapsedTime: 5*60+7 });
@@ -16,7 +16,7 @@ export default function TimerPage() {
     return (
         <div id="timer-page">
             <ParticleBackground></ParticleBackground>
-            <TimerForm onSubmit={handleFormSubmit} />
+            <TimerForm onChange={handleFormSubmit} />
             <Timer key={timerKey} {...timerProps} />
         </div>
     );
