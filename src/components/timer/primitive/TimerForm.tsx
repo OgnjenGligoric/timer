@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './TimerForm.css';
 import Button from "../../shared/Button";
 import Icon from '../../../assets/Clock.png';
-import {Input, Slider, TextField} from '@mui/material';
+import {Slider, TextField} from '@mui/material';
 
 type TimerFormProps = {
     onChange: (title: string, endTime: number, elapsedTime: number) => void;
