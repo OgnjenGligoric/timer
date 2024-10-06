@@ -14,7 +14,7 @@ type TimerProps = {
 }
 
 const Timer = ({ title, endTime, elapsedTime = 0 }: TimerProps) => {
-    const validationError = useTimerValidation(endTime, elapsedTime);
+    const validationError = useTimerValidation(endTime, elapsedTime, title);
 
     const { timeLeft, isRunning, startTimer, pauseTimer, resetTimer } = useTimer({ endTime, elapsedTime });
 

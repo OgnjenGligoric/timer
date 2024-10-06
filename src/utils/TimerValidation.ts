@@ -23,4 +23,10 @@ export class TimerValidator {
             throw new Error('Invalid endTime: Timer cannot be below 0 minutes and 0 seconds.');
         }
     }
+
+    static validateTitle(title: string){
+        if(title.trim() === ""){
+            throw new Error('Invalid title: Title cannot be empty.')
+        }
+    }
 }
