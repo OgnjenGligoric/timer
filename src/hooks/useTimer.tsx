@@ -29,7 +29,7 @@ const useTimer = ({ endTime, elapsedTime = 0 }: UseTimerProps) => {
     const startTimer = () => setIsRunning(true);
     const pauseTimer = () => setIsRunning(false);
     const resetTimer = () => {
-        setTimeLeft(endTime);  // Reset time based on updated props
+        setTimeLeft(endTime);
         setIsRunning(false);
     };
 

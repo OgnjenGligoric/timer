@@ -18,7 +18,7 @@ const TimerForm = ({ onChange }: TimerFormProps) => {
     const [endTime, setEndTime] = useState<number>(0);
     const [elapsedTime, setElapsedTime] = useState<number>(0);
 
-    const commonSx = {
+    const inputCommonSx = {
         '& .MuiOutlinedInput-root': {
             '& fieldset': { borderColor: '#606170' },
             '&:hover fieldset': { borderColor: '#c2c2c2' },
@@ -40,20 +40,20 @@ const TimerForm = ({ onChange }: TimerFormProps) => {
                     <div className="clock-icon-container">
                         <img src={Icon} alt="Clock icon" />
                     </div>
-                    <TextField fullWidth label="Title" value={title} sx={commonSx}
+                    <TextField fullWidth label="Title" value={title} sx={inputCommonSx}
                         onChange={(e) => setTitle(e.target.value)}
                     />
                     <div className="timer-input-container">
                         <div>
                             <p>End Time</p>
-                            <MobileTimePicker views={['minutes', 'seconds']} format="mm:ss" sx={{ width: '100%', ...commonSx }}
+                            <MobileTimePicker views={['minutes', 'seconds']} format="mm:ss" sx={{ width: '100%', ...inputCommonSx }}
                                 value={secondsToDayjs(endTime)}
                                 onChange={(newValue) => handleTimeChange(newValue, setEndTime)}
                             />
                         </div>
                         <div>
                             <p>Elapsed Time</p>
-                            <MobileTimePicker views={['minutes', 'seconds']} format="mm:ss" sx={{ width: '100%', ...commonSx }}
+                            <MobileTimePicker views={['minutes', 'seconds']} format="mm:ss" sx={{ width: '100%', ...inputCommonSx }}
                                 value={secondsToDayjs(elapsedTime)}
                                 onChange={(newValue) => handleTimeChange(newValue, setElapsedTime)}
                             />
