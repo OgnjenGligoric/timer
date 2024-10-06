@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './TimerForm.css';
-import Button from "../../shared/Button";
-import Icon from '../../../assets/Clock.png';
+import Button from "../shared/Button";
+import Icon from '../../assets/Clock.png';
 import { TextField } from '@mui/material';
 import { MobileTimePicker } from "@mui/x-date-pickers";
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import Theme from "../../shared/Theme";
+import Theme from "../shared/Theme";
 import dayjs from 'dayjs';
 
 type TimerFormProps = {
@@ -14,9 +14,9 @@ type TimerFormProps = {
 };
 
 const TimerForm = ({ onChange }: TimerFormProps) => {
-    const [title, setTitle] = useState<string>('');
-    const [endTime, setEndTime] = useState<number>(0);
-    const [elapsedTime, setElapsedTime] = useState<number>(0);
+    const [title, setTitle] = useState<string>('Title from Props');
+    const [endTime, setEndTime] = useState<number>(10);
+    const [elapsedTime, setElapsedTime] = useState<number>(3);
 
     const inputCommonSx = {
         '& .MuiOutlinedInput-root': {

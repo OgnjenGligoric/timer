@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import './Timerpage.css';
-import TimerForm from "../components/timer/primitive/TimerForm";
+import TimerForm from "../components/timer-form/TimerForm";
 import Timer from "../components/timer/Timer";
 import ParticleBackground from "../components/shared/ParticlesBackground";
 
 export default function TimerPage() {
-    const [timerProps, setTimerProps] = useState({ title: 'Title from Props', endTime: 25*60, elapsedTime: 5*60+7 });
+    const [timerProps, setTimerProps] = useState({ title: 'Title from Props', endTime: 10, elapsedTime: 3 });
     const [timerKey, setTimerKey] = useState(0);
 
     const handleFormSubmit = (title: string, endTime: number, elapsedTime: number) => {
