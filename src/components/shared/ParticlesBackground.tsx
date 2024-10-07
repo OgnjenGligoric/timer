@@ -11,7 +11,7 @@ const ParticleBackground = () => {
     }, []);
 
     const options: ISourceOptions = useMemo(() => ({
-        background: { color: { value: "#001233" } },
+        background: { color: { value: "#a1a3c9" } },
         fpsLimit: 120,
         interactivity: {
             events: {
@@ -22,8 +22,8 @@ const ParticleBackground = () => {
             },
         },
         particles: {
-            color: { value: "#0466c8" },
-            links: { color: "#0466c8", distance: 150, enable: true, opacity: 0.5, width: 1 },
+            color: { value: "#26273d" },
+            links: { color: "#26273d", distance: 150, enable: true, opacity: 0.5, width: 1 },
             move: { direction: "none", enable: true, outModes: { default: "out" }, speed: 6 },
             number: { density: { enable: true }, value: 350 },
             opacity: { value: 0.5 },
