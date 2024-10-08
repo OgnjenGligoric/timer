@@ -11,7 +11,6 @@ const ParticleBackground = () => {
     }, []);
 
     const options: ISourceOptions = useMemo(() => ({
-        background: { color: { value: "#a1a3c9" } },
         fpsLimit: 120,
         interactivity: {
             events: {
@@ -25,7 +24,7 @@ const ParticleBackground = () => {
             color: { value: "#26273d" },
             links: { color: "#26273d", distance: 150, enable: true, opacity: 0.5, width: 1 },
             move: { direction: "none", enable: true, outModes: { default: "out" }, speed: 6 },
-            number: { density: { enable: true }, value: 350 },
+            number: { density: { enable: true }, value: 200 },
             opacity: { value: 0.5 },
             shape: { type: "circle" },
             size: { value: { min: 1, max: 5 } },
@@ -34,7 +33,10 @@ const ParticleBackground = () => {
     }), []);
 
     return init ? (
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1 }}>
+        <div style={{
+            position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1,
+            background: 'linear-gradient(to bottom, #a1a3c9, #26273d)'
+        }}>
             <Particles id="tsparticles" options={options} />
         </div>
     ) : null;
