@@ -18,7 +18,7 @@ const useTimer = ({ endTime, elapsedTime = 0 }: UseTimerProps) => {
         let timer: NodeJS.Timeout | undefined;
 
         if (isRunning && timeLeft > 0) {
-            timer = setInterval(() => setTimeLeft(prev => prev - 0.01), 10);
+            timer = setInterval(() => setTimeLeft(prev => prev - 1), 1000);
         } else if (timeLeft <= 0) {
             setIsRunning(false);
         }
