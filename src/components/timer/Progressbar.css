@@ -24,3 +24,6 @@
     align-items: center;
     gap: 10px;
 }
+.progressbar-container {
+    max-width: 400px;
+}

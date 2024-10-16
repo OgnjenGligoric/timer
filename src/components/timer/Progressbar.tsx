@@ -8,18 +8,20 @@ const Progressbar: React.FC<TimerProgressbarProps> = ({ title, endTime, timeLeft
     const isCompleted = percentage >= 100;
 
     return (
-        <CircularProgressbarWithChildren value={percentage} strokeWidth={4}
-            styles={buildStyles({pathColor: isCompleted ? 'url(#color-shift)' : '#67cb88', trailColor: '#545576'})}>
+        <div className={"progressbar-container"}>
+            <CircularProgressbarWithChildren value={percentage} strokeWidth={4}
+                                             styles={buildStyles({pathColor: isCompleted ? 'url(#color-shift)' : '#67cb88', trailColor: '#545576'})}>
 
-            <div className="progressbar-content">
-                <p>{title}</p>
-                <h1>{formatTime(endTime - timeLeft)}</h1>
-                <p>{formatTime(timeLeft)} left</p>
-            </div>
+                <div className="progressbar-content">
+                    <p>{title}</p>
+                    <h1>{formatTime(endTime - timeLeft)}</h1>
+                    <p>{formatTime(timeLeft)} left</p>
+                </div>
 
-            {isCompleted && (<ColorShiftAnimation/>)}
+                {isCompleted && (<ColorShiftAnimation/>)}
 
-        </CircularProgressbarWithChildren>
+            </CircularProgressbarWithChildren>
+        </div>
     );
 };
 
