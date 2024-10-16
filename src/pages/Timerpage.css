@@ -1,0 +1,12 @@
+#timer-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+@media (max-width: 900px) {
+    #timer-page {
+        flex-direction: column;
+    }
+}
