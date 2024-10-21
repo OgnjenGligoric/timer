@@ -10,10 +10,10 @@ import Theme from "../shared/Theme";
 import dayjs from 'dayjs';
 
 type TimerFormProps = {
-    onChange: (title: string, endTime: number, elapsedTime: number) => void;
+    onSubmit: (title: string, endTime: number, elapsedTime: number) => void;
 };
 
-const TimerForm = ({ onChange }: TimerFormProps) => {
+const TimerForm = ({ onSubmit }: TimerFormProps) => {
     const [title, setTitle] = useState<string>('Title from Props');
     const [endTime, setEndTime] = useState<number>(10);
     const [elapsedTime, setElapsedTime] = useState<number>(3);
@@ -59,7 +59,7 @@ const TimerForm = ({ onChange }: TimerFormProps) => {
                             />
                         </div>
                     </div>
-                    <Button onClick={() => onChange(title, endTime, elapsedTime)}>Set</Button>
+                    <Button onClick={() => onSubmit(title, endTime, elapsedTime)}>Set</Button>
                 </div>
             </Theme>
         </LocalizationProvider>

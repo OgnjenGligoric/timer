@@ -34,7 +34,7 @@ const ParticleBackground = () => {
 
     return init ? (
         <div style={{
-            position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: -1,
+            position: 'fixed', top: 0, left: 0, minWidth: '100%', minHeight: '100vh', zIndex: -1,
             background: 'linear-gradient(to bottom, #a1a3c9, #26273d)'
         }}>
             <Particles id="tsparticles" options={options} />
