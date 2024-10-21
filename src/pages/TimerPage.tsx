@@ -16,7 +16,7 @@ export default function TimerPage() {
     return (
         <div id="timer-page">
             <ParticleBackground></ParticleBackground>
-            <TimerForm onChange={handleFormSubmit} />
+            <TimerForm onSubmit={handleFormSubmit} />
             <Timer key={timerKey} {...timerProps} />
         </div>
     );
