@@ -10,7 +10,9 @@ import Theme from "../shared/Theme";
 import dayjs from 'dayjs';
 
 type TimerFormProps = {
-    onSubmit: (title: string, endTime: number, elapsedTime: number) => void;
+    onSubmit: (title: string, 
+               endTime: number,
+               elapsedTime: number) => void;
 };
 
 const TimerForm = ({ onSubmit }: TimerFormProps) => {

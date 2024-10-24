@@ -8,9 +8,9 @@ import useTimerValidation from "../../hooks/useTimerValidation";
 import ErrorAnimation from "./primitive/ErrorAnimation";
 
 type TimerProps = {
-    title: string,
-    endTime: number,
-    elapsedTime?: number
+    title: string, // Label for the timer.
+    endTime: number, // Target time for the timer to finish (in seconds).
+    elapsedTime?: number // Optional: Time already passed (in s), default is 0.
 }
 
 const Timer = ({ title, endTime, elapsedTime = 0 }: TimerProps) => {
@@ -21,7 +21,9 @@ const Timer = ({ title, endTime, elapsedTime = 0 }: TimerProps) => {
     if (validationError){
         return (
             <div className="timer-container">
-                <div className="error-message">{validationError}<ErrorAnimation/></div>
+                <div className="error-message">{validationError}
+                    <ErrorAnimation/>
+                </div>
             </div>
         );
     }

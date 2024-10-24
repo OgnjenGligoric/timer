@@ -3,6 +3,12 @@ import React from "react";
 import './Progressbar.css'
 import ColorShiftAnimation from "./primitive/ColorShiftAnimation";
 
+type TimerProgressbarProps = {
+    title: string; // Label for the timer.
+    endTime: number; // Target time for the timer to finish (in seconds).
+    timeLeft: number; // Time left for tracking progress
+}
+
 const Progressbar: React.FC<TimerProgressbarProps> = ({ title, endTime, timeLeft }) => {
     const percentage = 100 - (timeLeft / endTime) * 100;
     const isCompleted = percentage >= 100;
@@ -26,12 +32,6 @@ const Progressbar: React.FC<TimerProgressbarProps> = ({ title, endTime, timeLeft
 };
 
 export default Progressbar;
-
-type TimerProgressbarProps = {
-    title: string;
-    endTime: number;
-    timeLeft: number;
-}
 
 const capAtZero = (value: number): number => {
     return value < 0 ? 0 : value;
