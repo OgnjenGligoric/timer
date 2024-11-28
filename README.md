@@ -5,9 +5,6 @@
 To use this project you can visit this URL [Amazing Timer](https://timer-eta-ecru.vercel.app/).
 ------
 
-------
-
-![taylor_under_serviced.jpeg](src%2Fassets%2Ftaylor_under_serviced.jpeg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
