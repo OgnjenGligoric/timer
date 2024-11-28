@@ -1,8 +1,8 @@
-# Getting Started with Amazing Timer
+# Getting Started with Timer
 
 -----
 
-To use this project you can visit this URL [Amazing Timer](https://timer-eta-ecru.vercel.app/).
+To use this project you can visit this URL [Timer](https://timer-eta-ecru.vercel.app/).
 ------
 
 
