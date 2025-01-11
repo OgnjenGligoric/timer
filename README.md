@@ -2,6 +2,10 @@
 
 -----
 
+![image](https://github.com/user-attachments/assets/4acd73e7-b204-4806-9efa-97f4445e56f2)
+
+-----
+
 To use this project you can visit this URL [Timer](https://timer-eta-ecru.vercel.app/).
 ------
 
